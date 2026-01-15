@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清荷宝宝周岁庆祝福页</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(to bottom, #f9f3e9, #f5e6d3);
+            text-align: center;
+            padding: 40px 20px;
+            margin: 0;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        .subtitle {
+            color: #6a5acd;
+            font-size: 1.6em;
+            margin-bottom: 35px;
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 350px;
+            margin: 25px auto 30px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .nav-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #ccc;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .nav-dot.active {
+            background: #ff6b6b;
+        }
+        .carousel-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 20px;
+        }
+        .control-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: scale(1.1);
+        }
+        .message-box {
+            background: #fff9c4;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 6px solid #ffeb3b;
+            /* 固定高度，防止外框变化 */
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .message {
+            font-size: 1.4em;
+            color: #333;
+            line-height: 1.6;
+            /* 限制文本容器的最大宽度和高度 */
+            max-width: 100%;
+            max-height: 100%;
+            overflow: hidden;
+            /* 使用white-space处理换行 */
+            white-space: pre-line;
+            /* 确保文字在容器内正确显示 */
+            text-align: center;
+            /* 强制文本居中对齐 */
+            margin: 0 auto;
+        }
+        .button {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        .button:hover {
+            background: #388e3c;
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 35px;
+            color: #777;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 清荷宝宝周岁快乐！ 🎂</h1>
+        <div class="subtitle">欢迎参加我们的周岁庆典</div>
+        
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="https://picture-lotus.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260104103120_26_210.jpg" 
+                     alt="清荷宝宝1" class="slide-image">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://picture-lotus.oss-cn-shanghai.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260104110913_646_207.jpg" 
+                     alt="清荷宝宝2" class="slide-image">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/700x500/FFA07A/333333?text=宝宝照片3" 
+                     alt="清荷宝宝3" class="slide-image">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/700x500/87CEEB/333333?text=宝宝照片4" 
+                     alt="清荷宝宝4" class="slide-image">
+            </div>
+        </div>
+        
+        <div class="carousel-controls">
+            <button class="control-btn" onclick="prevSlide()">&lt;</button>
+            <button class="control-btn" onclick="nextSlide()">&gt;</button>
+        </div>
+        
+        <div class="carousel-nav">
+            <span class="nav-dot active" onclick="currentSlide(0)"></span>
+            <span class="nav-dot" onclick="currentSlide(1)"></span>
+            <span class="nav-dot" onclick="currentSlide(2)"></span>
+            <span class="nav-dot" onclick="currentSlide(3)"></span>
+        </div>
+        
+        <div class="message-box">
+            <div class="message" id="random-message">欢迎来到\n清荷宝宝的周岁庆典！</div>
+        </div>
+        
+        <button class="button" onclick="generateNewMessage()">换一句祝福</button>
+        
+        <div class="footer">
+            <p>周岁庆典 · 2026年</p>
+            <p>愿清荷宝宝健康快乐成长！</p>
+        </div>
+    </div>
+
+    <script>
+        // 确保变量在全局作用域声明
+        let currentSlideIndex = 0;
+        let slides = null;
+        let dots = null;
+        
+        // 预设祝福语数组 - 已经加入换行符
+        const messages = [
+            "欢迎来到\n清荷宝宝的周岁礼！\n愿小天使健康快乐成长！",
+            "清荷宝宝\n周岁快乐！\n感谢您的到来，一起见证这美好时刻！",
+            "小小人儿\n一岁啦！\n祝清荷宝宝聪明伶俐，天天开心！",
+            "周岁之喜\n幸福满溢！\n欢迎参加清荷宝宝的成长庆典！",
+            "清荷宝宝\n满周岁啦！\n愿她像小花一样美丽绽放！",
+            "一岁一礼\n一寸欢喜！\n祝清荷宝贝生日快乐！",
+            "清荷宝宝\n周岁快乐！\n愿她的笑容永远如今天般灿烂！",
+            "恭喜清荷\n宝宝一周岁！\n愿她平安健康，茁壮成长！",
+            "周岁庆典\n欢乐无限！\n感谢您来陪伴清荷宝宝！",
+            "小公主\n周岁快乐！\n愿清荷宝宝一生幸福安康！",
+            "一岁的小天使，\n祝你未来充满阳光与欢笑！",
+            "清荷宝宝\n周岁快乐！\n愿你的每一天都充满惊喜！",
+            "周年成长纪念，\n祝清荷宝贝越来越可爱！",
+            "周岁快乐！\n愿清荷宝宝的童年充满爱与温暖！",
+            "小宝贝\n周岁快乐！\n愿你的未来如荷花般纯洁美好！"
+        ];
+
+        // 页面加载完成后初始化
+        window.onload = function() {
+            // 确保DOM元素已加载
+            slides = document.querySelectorAll('.carousel-slide');
+            dots = document.querySelectorAll('.nav-dot');
+            // 初始化页面
+            generateNewMessage();
+        };
+
+        // 显示指定幻灯片
+        function showSlide(index) {
+            if (!slides || !dots) return;
+            // 隐藏所有幻灯片
+            slides.forEach(slide => slide.classList.remove('active'));
+            // 移除所有活动点
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // 显示当前幻灯片
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlideIndex = index;
+        }
+
+        // 下一张
+        function nextSlide() {
+            if (!slides) return;
+            const newIndex = (currentSlideIndex + 1) % slides.length;
+            showSlide(newIndex);
+        }
+
+        // 上一张
+        function prevSlide() {
+            if (!slides) return;
+            const newIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+            showSlide(newIndex);
+        }
+
+        // 当前幻灯片
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        // 自动播放
+        setInterval(() => {
+            nextSlide();
+        }, 5000); // 每5秒切换
+
+        // 获取随机祝福语
+        function getRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            return messages[randomIndex];
+        }
+
+        // 更新页面显示的祝福语
+        function generateNewMessage() {
+            document.getElementById('random-message').textContent = getRandomMessage();
+        }
+    </script>
+</body>
+</html>
+
+
+
